@@ -85,7 +85,7 @@ public class PersonDao {
         try {
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_system", "app1", "Jbdl@1234");
 //            Statement statement = conn.createStatement();
-//            String insertQuery = "insert into person values (null,'"+person.getName()+"','"+person.getEmail()+"',null,null)";
+//            String insertQuery = "insert into person values (null,'"+person.getName()+"','"+person.getEmail()+"',null,null)"; // we are writing like this so that we generate a string like we would write while inserting in SQL
 //            boolean status = statement.execute(insertQuery);
 
             String prepQuery ="insert into person values (null, ?, ?,?,null)";

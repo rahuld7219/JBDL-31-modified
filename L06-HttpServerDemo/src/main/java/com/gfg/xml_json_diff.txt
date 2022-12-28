@@ -3,9 +3,11 @@
 <Addresss>
 <street>Street 123</street>
 <city>Delhi</city>
-<value type="int">1</value>
+<value type="int">1</value> // we can define type also in XML
 </Address>
+
 ========
+
 {
 "street":"Street 123",
 "city":"Delhi"
@@ -16,12 +18,12 @@
 
 
 =========
-Client and Server are already aware.
+When Client and Server are already aware, we can use protobuf, gRPC, etc.
 1 line: Street
 2 line: city
 
-protobuf
-gRPC
+protobuf (protocol buffers this is also a data format like JSON, etc.) (by google)
+gRPC (by google)
 
 "Street 123"
 "Delhi"

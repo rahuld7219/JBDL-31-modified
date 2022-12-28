@@ -11,6 +11,9 @@ import org.springframework.context.annotation.Primary;
 public class ProjectConfig {
 
     @Bean("basicKeywordAnalyzer")
+    // here we overriding the bean name also as basicKeywordAnalyzer,
+    // by default the bean name is the method name given below as getKeywordAnalyser
+    // (once we override the name then that will not be available)
     @Primary
     public KeywordAnalyzerInterface getKeywordAnalyser(){
         return new BasicKeywordAnalyzer();

@@ -15,8 +15,8 @@ import javax.servlet.http.HttpFilter;
 import java.io.IOException;
 
 @Component
+// can specify @Order in case multiple filters to execute in certain orders
 public class UsernameFilter extends HttpFilter {
-    private static final String REQUEST_ID = "requestId";
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException, ServletException, IOException, ServletException, IOException {

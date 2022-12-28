@@ -14,6 +14,7 @@ import java.util.Map;
 @RestController
 public class Controller {
 
+    // This method returns name and company fields from the logged in user details
     @RequestMapping("/user")
     public Map<String, Object> user() {
 
@@ -26,8 +27,12 @@ public class Controller {
 //		return Collections.singletonMap("name", principal.getAttribute("name"));
     }
 
+    // This method returns all the user details(logged in user) that the application(client)
+    // is able to access from authorization server(Github, etc.). We can put these details in database also.
     @RequestMapping("/user_details")
     public OAuth2User getUserDetails(@AuthenticationPrincipal OAuth2User principal){
         return principal;
     }
+    // @AuthenticationPrincipal is same as using SecurityContextHolder.getContext().getAuthentication()
+    // to get the logged in user context(session)
 }

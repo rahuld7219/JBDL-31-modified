@@ -15,9 +15,9 @@ public class L09JdbcDemoApplication {
 			 conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/demo_system", "app1", "Jbdl@1234");
 			Statement statement = conn.createStatement();
 			String query ="select * from person";
-			ResultSet rs = statement.executeQuery(query);
+			ResultSet rs = statement.executeQuery(query); // rs is nothing but like a cursor to the set of rows that are returned
 			while (rs.next()){
-				System.out.println(rs.getString(2));
+				System.out.println(rs.getString(2)); // index starts with 1, instead of column number we can also use column name
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

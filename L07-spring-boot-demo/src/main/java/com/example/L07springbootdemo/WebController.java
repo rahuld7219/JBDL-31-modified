@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class WebController {
 
     @GetMapping("/menu")
-    @ResponseBody
+    // @ResponseBody // this is needed to send the response as text not the html page
     public String getMenu(){
         return "menu.html";
-    }
+    } // search the html page in static resource and return that html page
 }

@@ -24,6 +24,10 @@ public class Config extends WebSecurityConfigurerAdapter {
                 .logout()
                 .logoutSuccessUrl("/").permitAll()
                 .and()
-                .oauth2Login();
+                .oauth2Login(); // no HttpForm, it will be using OAuth2 for login,
+                                // there is no part of code for Authentication because the
+                                // Authorization server(we are using Github)
+                                // is taking care of authentication.
+                                // We can put Authorization code also like which logged in user acts as admin, etc.
     }
 }

@@ -31,10 +31,15 @@ public class BlogController {
     }
 
 
-
+    /**
+     * add visitor to a list (which can be used as stack or queue, depending on the operation performed)
+     *
+     * @param name
+     * @return
+     */
     @PostMapping("/addVisitor")
     public ResponseEntity<Long> addVisitor(@RequestParam String name){
-        Long size = redisTemplate.opsForList().leftPush(visitorQueueKey,name);
+        Long size = redisTemplate.opsForList().leftPush(visitorQueueKey,name); // also create the list, if not exist
         return ResponseEntity.ok(size);
     }
 

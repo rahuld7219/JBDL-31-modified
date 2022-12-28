@@ -15,6 +15,11 @@ public class SpringIoCDemo {
 //         Spring IoC
         Resource resource = new ClassPathResource("projectbeans.xml");
         BeanFactory factory = new XmlBeanFactory(resource);
+        // BeanFactory is an interface, XmlBeanFactory is an implementation
+        // XmlBeanFactory doesn't creates all the beans(singleton) defined
+        // in the xml file while reading it at starting(i.e., at this point)
+        // any bean will be created on calling getBean only(singleton will be created when called 1st time only)
+
         Engine engine1 = (Engine) factory.getBean("engine1");
         System.out.println(engine1);
 
@@ -29,9 +34,12 @@ public class SpringIoCDemo {
 
 
 
-        // its an implementation of BeanFactor
+        // it's an implementation of BeanFactory
 //        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("projectbeans.xml");
 //        ApplicationContext context = new ClassPathXmlApplicationContext("projectbeans.xml");
+//        // ClassPathXmlApplicationContext creates all the beans(singleton)
+//        // defined in the xml file at the starting only( i.e., at this point while reading the xml file)
+
 //        Engine engine2 = (Engine) context.getBean("engine2");
 //        System.out.println(engine2);
 //        context.close();

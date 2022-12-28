@@ -43,6 +43,11 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>compile</scope>
+			<!-- the driver required at runtime only so we can make the scope as 'runtime' also,
+			but we made it 'compile' because in our code we used StatementImpl,
+			which need to be imported i.e., required at compile time
+			(StatementImpl is not part of standard java, it is part of JDBC driver provided by the MySQL vendor)
+			-->
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>

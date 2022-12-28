@@ -8,6 +8,9 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+/**
+ * service for database (MySQL) user store
+ */
 @Service
 @Primary
 public class DBUserStore implements UserDetailsService {

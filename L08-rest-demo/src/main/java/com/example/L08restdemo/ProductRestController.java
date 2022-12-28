@@ -21,6 +21,7 @@ public class ProductRestController {
         product = productService.addProduct(product);
         URI uri = new URI("/product/"+product.getId());
         return ResponseEntity.created(uri).body(product);
+        // REST guideline is to send the URI of the resource created along with the status code 200
     }
 
     @GetMapping("/{id}")
